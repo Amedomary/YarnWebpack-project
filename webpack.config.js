@@ -1,22 +1,36 @@
 const path = require('path');
-const devServer = require('webpack-dev-server');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
-    source: path.join(__dirname, 'soucre'),
+    source: path.join(__dirname, 'src'),
     build: path.join(__dirname, 'build')
 };
 
 module.exports = {
-    entry: PATHS.source + '/index.html',
+    entry: PATHS.source + '/index.js',
     output: {
         path: PATHS.build,
-        filename: '[name].html'
+        filename: '[name].js'
     },
     plugins: [
-        new devServer({
-            contentBase: path.join(__dirname, "dist"),
-            compress: true,
-            port: 9000
+        new HtmlWebpackPlugin({
+            template: PATHS.source + '/index.pug'
         })
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+                options: {
+                    pretty: true
+                }
+            }
+        ]
+    },
+    devServer: {
+        contentBase: path.join(__dirname, "build"),
+        compress: true,
+        port: 9000
+    }
 };

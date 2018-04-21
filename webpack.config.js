@@ -1,13 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// константа путей
 const PATHS = {
     source: path.join(__dirname, 'src'),
     build: path.join(__dirname, 'build')
 };
 
 module.exports = {
-    entry: PATHS.source + '/index.js',
+    entry: PATHS.source + '/index.js', //точка входа
     output: {
         path: PATHS.build,
         filename: '[name].js'

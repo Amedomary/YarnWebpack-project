@@ -6,6 +6,7 @@
   "author": "Maxim G <amed@mail.ru>",
   "license": "MIT",
   "dependencies": {
-    "webpack": "^4.6.0"
+    "webpack": "^4.6.0",
+    "webpack-dev-server": "^3.1.3"
   }
 }

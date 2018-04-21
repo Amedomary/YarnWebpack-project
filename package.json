@@ -5,8 +5,14 @@
   "repository": "https://github.com/Amedomary/YarnWebpack-project.git",
   "author": "Maxim G <amed@mail.ru>",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
   "dependencies": {
     "webpack": "^4.6.0",
     "webpack-dev-server": "^3.1.3"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.0.15"
   }
 }
